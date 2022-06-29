@@ -94,7 +94,7 @@ Before uploading the code to Arduino we need to add a library to Arduino. Just g
 
 **Sketch> Include Library> Manage Libraries…**
 
-<img src = "" >
+<img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Install-Adafruit-Motor-Shield-Library.jpg" >
 
 Then Search for Adafruit Motor Shield Library(Adafruit has 2 Libraries for this topic V1 and V2. For our purpose we will only need the V1 library.) from the search bar. Now install the Library. In my case, I have already installed it. So, It is showing already installed.
 
