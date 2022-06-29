@@ -64,27 +64,105 @@ In the Same way,**F, B, L, R are used for moving the car Forward, Backward, Left
 <img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Glue%20Gun.jpg" >
 
 
-## **Schematics of the Bluetooth Control Car with L293D:**
+## ***Schematics* of the Bluetooth Control Car with L293D:**
 
 <img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Arduino-Bluetooth-control-car-with-L293D.jpg" >
 
-### **Concept**
+### **Basic Concept of the Main Circuit**
 1. Forward Condition
 
-<img src = "" >
+<img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Forward%20Condition.png" >
 
 2. Backward Condition
 
-<img src = "" >
+<img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Backward%20Condition.png" >
 
 3. Right Condition
 
-<img src = "" >
+<img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Right%20Condition.png" >
 
 4. Left Condition
 
-<img src = "" >
+<img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Left%20Condition.png" >
 
 5. Stop Condition
 
-<img src = "" >
+<img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Stop%20Condition.png" >
+
+## **Arduino Bluetooth Control Car using L293D *Code***
+```c
+#include <AFMotor.h>
+
+//initial motors pin
+AF_DCMotor motor3(3, MOTOR34_64KHZ);
+AF_DCMotor motor4(4, MOTOR34_64KHZ);
+
+char command;
+
+void setup() {
+  Serial.begin(9600);  //Set the baud rate to your Bluetooth module.
+}
+
+void forward(){
+  motor3.setSpeed(255);//Define maximum velocity
+  motor3.run(FORWARD); //rotate the motor clockwise
+  motor4.setSpeed(255);//Define maximum velocity
+  motor4.run(FORWARD); //rotate the motor clockwise
+  //delay(3000);
+}
+
+void back(){
+  motor3.setSpeed(255); //Define maximum velocity
+  motor3.run(BACKWARD); //rotate the motor anti-clockwise
+  motor4.setSpeed(255); //Define maximum velocity
+  motor4.run(BACKWARD); //rotate the motor anti-clockwise
+  //delay(3000);
+}
+
+void left(){
+  motor3.setSpeed(0);//Define minimum velocity
+  motor3.run(FORWARD); //rotate the motor clockwise
+  motor4.setSpeed(255);//Define maximum velocity
+  motor4.run(FORWARD); //rotate the motor clockwise
+  //delay(3000);
+}
+
+void right(){
+  motor3.setSpeed(255);//Define minimum velocity
+  motor3.run(FORWARD); //rotate the motor clockwise
+  motor4.setSpeed(0);//Define minimum velocity
+  motor4.run(FORWARD); //rotate the motor clockwise
+  //delay(3000);
+}
+
+void Stop(){
+  motor3.setSpeed(0); //Define minimum velocity
+  motor3.run(RELEASE); //stop the motor when release the button
+  motor4.setSpeed(0); //Define minimum velocity
+  motor4.run(RELEASE); //stop the motor when release the button
+}
+
+void loop() {
+  while(Serial.available()==0){
+    
+  }
+  command = Serial.read();
+  Stop(); //initialize with motors stoped
+  //Serial.println(command);
+  
+  switch(command){
+    case 'F':
+      forward();
+      break;
+    case 'B':
+       back();
+      break;
+    case 'L':
+      left();
+      break;
+    case 'R':
+      right();
+      break;
+    }
+  }
+  ```
