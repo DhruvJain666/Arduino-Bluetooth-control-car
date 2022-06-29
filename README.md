@@ -90,6 +90,14 @@ In the Same way,**F, B, L, R are used for moving the car Forward, Backward, Left
 <img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Stop%20Condition.png" >
 
 ## **Arduino Bluetooth Control Car using L293D *Code***
+Before uploading the code to Arduino we need to add a library to Arduino. Just go to the following.
+
+**Sketch> Include Library> Manage Libraries…**
+
+<img src = "" >
+
+Then Search for Adafruit Motor Shield Library(Adafruit has 2 Libraries for this topic V1 and V2. For our purpose we will only need the V1 library.) from the search bar. Now install the Library. In my case, I have already installed it. So, It is showing already installed.
+
 ```c
 #include <AFMotor.h>
 
@@ -166,3 +174,7 @@ void loop() {
     }
   }
   ```
+  ## **Troubleshoot:**
+1. **The programmer** is not responding: If you face this error then it may be because of the Bluetooth Module. Always Disconnect the RX and the TX pins before uploading the code to the Arduino.
+2. **The motor is not rotating in the right direction:** If you face this issue then you don’t need to modify any code. You just have to Interchange the motor wires. In a simple way, I can say just connect the Motor to the Motor driver as I have shown in the Circuit Diagram.
+
