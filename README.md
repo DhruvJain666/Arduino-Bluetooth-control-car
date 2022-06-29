@@ -1,4 +1,7 @@
 # **Arduino Bluetooth control car using L293D Motor Driver**
+
+<img src = "https://github.com/DhruvJain666/Arduino-Bluetooth-control-car/blob/main/assets/Images/Final%20Product.jpeg" >
+
 Today in this README.md we are going to Make DIY **Arduino Bluetooth control car** with **Arduino UNO R3, L293D Motor Driver, and HC-05 Bluetooth Module.** Here you will get Fully Detailed instructions for making **Arduino Bluetooth Controlled Car.** Codes are also Included.
 
 ## **How Arduino Bluetooth Controlled Car Works?**
