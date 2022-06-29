@@ -11,4 +11,19 @@ Next, we have to code in a way that if Arduino Gets a Certain Data (Suppose ‘F
 In the Same way,**F, B, L, R are used for moving the car Forward, Backward, Left, Right movement.**
 
 ## **Things Needed For Arduino Bluetooth Controlled Car**
+1. **L293D Motor Driver**
+2. **HC-05 Bluetooth module**
+3. **Battery(9V)**
+4. **Motors(2 pieces)**
+5. **Wheels (6 Pieces)**
+6. **Arduino UNO**
+7. **Jumper Wire (Male-Male, Male-Female, Female-Female)**
+8. **Mechanix Metal - 5**
 
+## **Tools Needed for Arduino Bluetooth Controlled Robot**
+1. **Soldering Iron**
+2. **Solder Wire**
+3. **Solder Paste**
+4. **Glue Gun**
+
+## **Schematics of the Bluetooth Control Car with L293D:**
