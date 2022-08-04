@@ -27,8 +27,8 @@ void back(){
 }
 
 void left(){
-  motor3.setSpeed(0);//Define minimum velocity
-  motor3.run(FORWARD); //rotate the motor clockwise
+  motor3.setSpeed(255);//Define maximum velocity
+  motor3.run(BACKWARD); //rotate the motor anti-clockwise
   motor4.setSpeed(255);//Define maximum velocity
   motor4.run(FORWARD); //rotate the motor clockwise
   //delay(3000);
@@ -37,8 +37,8 @@ void left(){
 void right(){
   motor3.setSpeed(255);//Define minimum velocity
   motor3.run(FORWARD); //rotate the motor clockwise
-  motor4.setSpeed(0);//Define minimum velocity
-  motor4.run(FORWARD); //rotate the motor clockwise
+  motor4.setSpeed(255);//Define maximum velocity
+  motor4.run(BACKWARD); //rotate the motor anit-clockwise
   //delay(3000);
 }
 
